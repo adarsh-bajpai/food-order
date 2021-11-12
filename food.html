@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<hmtl>
+
+  <head>
+    <title>
+      Chetu's Delicious Food Ordering
+    </title>
+  </head>
+
+  <body>
+    <div>
+      <h1> Delicious Food 🍔 </h1>
+
+      <h2> Lunch Order 🏍 </h2>
+      <h3> Add your food items from below 📝</h3>
+
+      <form>
+        <label for="food"> Lunch:  </label>
+        <select id='food' name='food-menu-1' multiple>
+          <option value="Roti-Sabji"> Roti-Sabji </option>
+          <option value="Rajma-Rice"> Rajma Rice </option>
+          <option value="Kadhi-Rice"> Kadhi Rice </option>
+          <option value="Fried Rice"> Fried Rice </option>
+          <option value="Mixed Rice"> Mixed Rice </option>
+          <option value="Normal Thali"> Normal Thali </option>
+          <option value="Standard Thali"> Standard Thali </option>
+          <option value="Maharaja Thali"> Maharaja Thali </option>
+        </select>
+
+        <label for="food"> Dinner: </label>
+        <select id='food2' name='food-menu-2' multiple>
+          <option value="Dal-Rice"> Dal-Rice </option>
+          <option value="Chole-Rice"> Chole-Rice </option>
+          <option value="Shahi-Panner"> Shahi-Panner </option>
+          <option value="Palak-Panner"> Palak-Panner </option>
+          <option value="Masala-Rice"> Masala Rice </option>
+          <option value="Normal-Thali"> Normal Thali </option>
+          <option value="Standard Thali"> Standard Thali </option>
+          <option value="Maharaja Thali"> Maharaja Thali </option>
+        </select>
+
+        <label for='food'> Gift Items: </label>
+        <select id='food3' name='food-menu-3' multiple>
+          <option value="Ice-Cream"> Ice-Cream </option>
+          <option value="Soft-Drink"> Soft Drink </option>
+          <option value="Gulab-Jamun"> Gulab-Jamun </option>
+          <option value="Minral-Water"> Minral-Water </option>
+        </select>
+
+        <button id="Submit"> Submit </button>
+        <button id="Clear"> Clear </button>
+
+      </form>
+
+      <h4 id='Total'> Total </h4>
+      <script>
+        document.getElementById('Submit').onclick = function (e) {
+          e.preventDefault();
+          var select = document.getElementById('food')
+          console.log(select);
+          var selected_ = [];
+          var selected = [...select.options]
+            .filter(option => option.selected)
+            .map(option => option.value)
+          selected_ = [...selected];
+          var select = document.getElementById('food2')
+          console.log(select);
+          var selected = [...select.options]
+            .filter(option => option.selected)
+            .map(option => option.value)
+            selected_ = [...selected,...selected_];
+          var select = document.getElementById('food3')
+          console.log(select);
+          var selected = [...select.options]
+            .filter(option => option.selected)
+            .map(option => option.value)
+            
+            selected_ = [...selected,...selected_];
+            alert(selected_)
+          //document.getElementsById('Total').innerHTML = (selected_)  
+        }
+      </script>
+
+    </div>
+  </body>
+</hmtl>
