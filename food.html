@@ -77,7 +77,11 @@
             
             selected_ = [...selected,...selected_];
             alert(selected_)
-          //document.getElementsById('Total').innerHTML = (selected_)  
+          document.getElementById('Total').innerText = selected_.toString()
+                    
+           function clear() {
+              return selected_= []
+           } 
         }
       </script>
 
